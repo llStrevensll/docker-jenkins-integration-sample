@@ -7,10 +7,7 @@ pipeline {
 	    }
 	}
 	stage('Back-end') {
-
-            agent {
-                docker { image 'llstrevensll/docker-jenkins-integration-sample' }
-            }
+            agent { dockerfile true }
             steps {
 		echo 'Backend-Maven'
                 sh 'mvn --version'
